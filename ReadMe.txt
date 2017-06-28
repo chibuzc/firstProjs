@@ -1,5 +1,5 @@
 This is an easy color game app.
-You are to try to match the rgb color code given in the title area with the colors displayed in the game area.
+The aim is to try to match the rgb color code given in the title area with the colors displayed in the game area.
 The Easy Mode has 3 color optons while the Hard mode has 6 options.
 
 
