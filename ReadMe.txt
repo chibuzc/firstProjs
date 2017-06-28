@@ -1,0 +1,2 @@
+This is a replication of the Colt Steele's project in his Web Developer Bootcamp Course.
+I made this exact replica from scratch to finish, but will still keep on working on it in my spare time as i have some improvements to make.
