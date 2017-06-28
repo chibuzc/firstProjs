@@ -13,11 +13,12 @@ var backgroundColor = "#232323"
 
 resetGame();
 
-
+//add listeners to reset button
 reset.addEventListener("click", function(){
 	resetGame();
 })
 
+// Difficulty mode buttons
 for (var i = 0; i < mode.length; i++) {
 		mode[i].addEventListener("click", function(){
 			mode[0].classList.remove("selected")
@@ -28,7 +29,7 @@ for (var i = 0; i < mode.length; i++) {
 	})
 }
 
-
+//generates a random color
 function randomColor(){
 	var r = Math.floor(Math.random() * 256);
 	var g = Math.floor(Math.random() * 256);
@@ -36,6 +37,8 @@ function randomColor(){
 	return ("rgb("+r+", "+g+", "+b+")");
 };
 
+//Generates an array of random colors. The length of this array depends on the difficulty level selected by the user.
+//3 colors for easy mode, 6 colors for had mode. All set by the difficulty mode buttons
 function generateRandomColors(num){
 	var arr = []
 	for (var i = 0; i < num; i++) {
@@ -45,7 +48,7 @@ function generateRandomColors(num){
 };
 
 
-
+//picks a color out of the random color. 
 function pickRandomColor (){
 	var ran = Math.floor(Math.random() * num);
 	return colors[ran]
@@ -53,10 +56,11 @@ function pickRandomColor (){
 
 
 function gameArea(){
-	//make squares clickable
+	//make squares of colors clickable
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].addEventListener("click", function(){
 			var clicked = this.style.background
+			//check if clicked squares correspond with picked color
 			if (clicked === pickedColor){
 				changeColor(pickedColor)
 				h1.style.background = pickedColor
@@ -67,11 +71,12 @@ function gameArea(){
 				stat.textContent = "TRY AGAIN!"
 			}
 			})
-		//check if clicked squares correspond with picked color
+		
 	}
 
 }
 
+//change the background color of a particular square when called
 function changeColor(color){
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].style.background = color
